@@ -59,4 +59,14 @@ describe('calculator', function () {
     const actual = calculator.runningTotal;
     assert.equal(actual, 7)
   })
+
+  it('can clear the running total without affecting the calculation', function () {
+    calculator.numberClick(2)
+    calculator.operatorClick('+')
+    calculator.numberClick(6)
+    calculator.clearClick()
+    calculator.operatorClick('=')
+    const actual = calculator.runningTotal;
+    assert.equal(actual, 2)
+  })
 });
