@@ -38,4 +38,14 @@ describe('calculator', function () {
     const actual = calculator.runningTotal;
     assert.equal(actual, 3)
   })
+
+  // integration tests
+
+  it('can concatenate multiple number button clicks', function () {
+    calculator.numberClick(1)
+    calculator.numberClick(2)
+    calculator.numberClick(3)
+    const actual = calculator.runningTotal;
+    assert.equal(actual, 123)
+  })
 });
