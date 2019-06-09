@@ -18,7 +18,7 @@ describe('calculator', function () {
     assert.equal(actual, 5)
   })
 
-  it('can subtract two numbers together', function () {
+  it('can subtract one number from another', function () {
     calculator.previousTotal = 7;
     calculator.subtract(4);
     const actual = calculator.runningTotal;
@@ -32,4 +32,10 @@ describe('calculator', function () {
     assert.equal(actual, 15)
   })
 
+  it('can divide one number by another', function () {
+    calculator.previousTotal = 21;
+    calculator.divide(7);
+    const actual = calculator.runningTotal;
+    assert.equal(actual, 3)
+  })
 });
