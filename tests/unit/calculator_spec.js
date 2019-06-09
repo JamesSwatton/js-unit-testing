@@ -48,4 +48,15 @@ describe('calculator', function () {
     const actual = calculator.runningTotal;
     assert.equal(actual, 123)
   })
+
+  it('can chain multiple operations together', function () {
+    calculator.numberClick(2)
+    calculator.operatorClick('*')
+    calculator.numberClick(5)
+    calculator.operatorClick('-')
+    calculator.numberClick(3)
+    calculator.operatorClick('=')
+    const actual = calculator.runningTotal;
+    assert.equal(actual, 7)
+  })
 });
