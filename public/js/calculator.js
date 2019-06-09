@@ -66,11 +66,16 @@ Calculator.prototype = {
     } else {
       this.previousOperator = operator;
     }
+
     // replace the previous total with the current running total and flag that a
     // new total has been calculated
 
     this.previousTotal = this.runningTotal;
     this.newTotal = true;
+
+    if (this.runningTotal == 'Infinity') {
+      this.runningTotal = 'Not a number'
+    }
   },
 
   clearClick: function() {

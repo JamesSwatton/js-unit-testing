@@ -69,4 +69,13 @@ describe('calculator', function () {
     const actual = calculator.runningTotal;
     assert.equal(actual, 2)
   })
+
+  it("can return 'not a number' if number is divided by 0", function () {
+    calculator.numberClick(2)
+    calculator.operatorClick('/')
+    calculator.numberClick(0)
+    calculator.operatorClick('=')
+    const actual = calculator.runningTotal;
+    assert.equal(calculator.runningTotal, 'Not a number')
+  })
 });

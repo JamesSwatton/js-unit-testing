@@ -70,7 +70,7 @@ describe('calculator functionality', function() {
     expect(running_total.getAttribute('value')).to.eventually.equal('1.5')
   })
 
-  it('should display laarge numbers correctly', function () {
+  it('should display large numbers correctly', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number1')).click();
     element(by.css('#number2')).click();
@@ -85,5 +85,15 @@ describe('calculator functionality', function() {
     element(by.css('#number5')).click();
     element(by.css('#operator_equals')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('152399025')
+  })
+
+  it("should display 'not a number' when a number is divided by O", function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number2')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('Not a number')
+
   })
 });
